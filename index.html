@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>LaundryKu</title>
+<meta name="theme-color" content="#06352A">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="LaundryKu">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<link rel="manifest" href="manifest.json">
+<link rel="icon" type="image/png" sizes="32x32" href="icon-32.png">
+<link rel="apple-touch-icon" href="icon-180.png">
+<style>
+  html,body{margin:0;height:100%;background:#06352A;color:#fff;font-family:system-ui,-apple-system,Segoe UI,Roboto,sans-serif}
+  .w{min-height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:14px;text-align:center;padding:24px;box-sizing:border-box}
+  img{width:96px;height:96px;border-radius:28px;box-shadow:0 10px 30px rgba(19,138,99,.4)}
+  h1{margin:0;font-size:26px} p{margin:0;opacity:.75}
+  a{display:inline-block;margin-top:10px;background:#138A63;color:#fff;text-decoration:none;font-weight:700;padding:13px 22px;border-radius:14px}
+</style>
+</head>
+<body>
+<div class="w">
+  <img src="icon-512.png" alt="">
+  <h1>LaundryKu</h1>
+  <p id="msg">Membuka aplikasi…</p>
+  <a id="go" href="#">Buka LaundryKu</a>
+</div>
+<script>
+  /* ====== GANTI dengan URL Web App Apps Script Anda (diakhiri /exec) ====== */
+  var APP_URL = 'https://script.google.com/macros/s/AKfycbwZ9c_fzpbMYUJSGiivd3M_burXX4at-AhaP5JrGCKSaB7JmMwmeDSNuzRJtONkh1UP/exec';
+  /* ======================================================================== */
+  document.getElementById('go').href = APP_URL;
+  if (APP_URL.indexOf('GANTI_') === -1) setTimeout(function () { location.replace(APP_URL); }, 600);
+  else document.getElementById('msg').textContent = 'URL aplikasi belum diatur di index.html';
+</script>
+</body>
+</html>
